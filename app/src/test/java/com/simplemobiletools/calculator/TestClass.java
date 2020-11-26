@@ -19,4 +19,9 @@ public class TestClass {
     public void secondTest() {
         assertEquals("126.439", new PlusOperation(new BigDecimal("125.44"),new BigDecimal("0.999")).getResult().toString());
     }
+
+    @Test
+    public void thirdTest() {
+        assertEquals("1.0", new PlusOperation(new BigDecimal("0.5"),new BigDecimal("0.5")).getResult().toString());
+    }
 }

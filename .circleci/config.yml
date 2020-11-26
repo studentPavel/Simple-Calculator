@@ -17,9 +17,8 @@ jobs:
 
 # Orchestrate or schedule a set of jobs
 workflows:
-  # Name the workflow "welcome"
+  # Name of the workflow
   build_and_test:
-    # Run the welcome/run job in its own container
     jobs:
       - build
       - test
