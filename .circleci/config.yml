@@ -13,7 +13,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: -junit5 com.simplemobiletools.calculator.TestClass
+          command: ./gradlew test
 
 # Orchestrate or schedule a set of jobs
 workflows:
