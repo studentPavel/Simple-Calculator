@@ -6,11 +6,11 @@ orbs:
   android: circleci/android@0.2.0
 jobs:
   build:
-  executor: android/android
-  steps:
-    - checkout
-    - run:
-        command: ./gradlew build
+    executor: android/android
+    steps:
+      - checkout
+      - run:
+          command: ./gradlew build
 # Orchestrate or schedule a set of jobs
 workflows:
   # Name the workflow "welcome"
