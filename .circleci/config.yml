@@ -1,27 +1,29 @@
 version: 2.1
 orbs:
-  android: circleci/android@0.2.0
+    android: circleci/android@0.2.0
 jobs:
-  build:
-    executor: android/android
-    steps:
-      - checkout
-      - run:
-          command: ./gradlew build
-  test:
-    executor: android/android
-    steps:
-      - checkout
-      - run:
-          command: ./gradlew test
+    build:
+        executor: android/android
+        steps:
+            - name: Run build
+            - checkout
+            - run:
+                  command: ./gradlew build  -x test
+    test:
+        executor: android/android
+        steps:
+            - name: Run tests
+            - checkout
+            - run:
+                  command: ./gradlew test -x testDebugUnitTest -x testReleaseUnitTest
 
 # Orchestrate or schedule a set of jobs
 workflows:
-  # Name of the workflow
-  build_and_test:
-    jobs:
-      - build
-      - test:
-           requires:
+    # Name of the workflow
+    build_and_test:
+        jobs:
             - build
+            - test:
+                  requires:
+                      - build
       
