@@ -15,8 +15,9 @@ jobs:
             - checkout
             - run:
                   name: Run tests
-                  command: ./gradlew test -x testDebugUnitTest -x testReleaseUnitTest
-
+                  command: ./gradlew test
+#                  I do not know purpose of crashing tests because local they are successful
+#                  command: ./gradlew test -x testDebugUnitTest -x testReleaseUnitTest
 # Orchestrate or schedule a set of jobs
 workflows:
     # Name of the workflow
