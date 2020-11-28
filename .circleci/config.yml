@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: ./gradlew build
+          command: ./gradle build
   test:
     executor: android/android
     steps:
