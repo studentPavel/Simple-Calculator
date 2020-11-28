@@ -5,16 +5,16 @@ jobs:
     build:
         executor: android/android
         steps:
-            - name: Run build
             - checkout
             - run:
+                  name: Run build
                   command: ./gradlew build  -x test
     test:
         executor: android/android
         steps:
-            - name: Run tests
             - checkout
             - run:
+                  name: Run tests
                   command: ./gradlew test -x testDebugUnitTest -x testReleaseUnitTest
 
 # Orchestrate or schedule a set of jobs
