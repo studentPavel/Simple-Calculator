@@ -13,7 +13,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: ./gradlew test -x testDebugUnitTest
+          command: ./gradlew test -x testDebugUnitTest testReleaseUnitTest
 
 # Orchestrate or schedule a set of jobs
 workflows:
